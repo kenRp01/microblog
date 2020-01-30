@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from blog.views import BlogListView
+
+# リクエスト-> urls.py -> views -> テンプレート -> レスポンス -> ユーザー
+
 urlpatterns = [
+    # path('<url>', views(関数), ニックネーム)
+    # http://localhost:8000/
+    path('', BlogListView.as_view(), name='index'),
     path('admin/', admin.site.urls),
 ]
