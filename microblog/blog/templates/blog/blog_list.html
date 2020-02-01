@@ -1,1 +1,16 @@
-<h1>Blog_list</h1>
+<html>
+  <head>
+    <title>MicroBlog</title>
+  </head>
+  <body>
+    <h1>MicroBlog</h1>
+    <div>
+        {% for blog in object_list %}
+        <div>
+          {{blog.contents}}<br>
+          {{blog.posted_date}}
+        </div>
+        {% endfor %}
+    </div>
+  </body>
+</html>
