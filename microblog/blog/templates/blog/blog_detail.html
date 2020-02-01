@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <h2>{{ object.contents }}</h2>
-    <p>{{ object.posted_date |date:"Y/m/d h:m:s" }}</p>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+                <a href="#">
+                    <h2 class="post-title">
+                        {{ object.contents }}
+                    </h2>
+                        <p class="post-meta">{{ object.posted_date | date:"Y/m/d h:m:s" }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

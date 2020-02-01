@@ -119,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    # mac / : windows ¥パスの区切りをOSに合わせる
+    os.path.normpath(os.path.join(BASE_DIR, "assets")),
+)
