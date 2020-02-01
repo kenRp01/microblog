@@ -1,12 +1,6 @@
-<html>
-  <head>
-    <title>MicroBlog</title>
-  </head>
-  <body>
-    <h1>MicroBlog</h1>
-    <div>
-        <h2>{{ object.contents }}</h2>
-        <p>{{ object.posted_date |date:"Y/m/d h:m:s" }}</p>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+    <h2>{{ object.contents }}</h2>
+    <p>{{ object.posted_date |date:"Y/m/d h:m:s" }}</p>
+{% endblock %}
