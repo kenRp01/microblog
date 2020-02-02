@@ -7,7 +7,7 @@
     <form method="post">
         {% csrf_token %}
         {{ from }}
-        <botton type="submit" class="btn btn-danger">削除</botton>
+        <input type="submit" class="btn btn-danger" value="削除">
         <a href="{% url 'index' %}" class="btn btn-default">キャンセル</a>
     </form>
 {% endblock %}
