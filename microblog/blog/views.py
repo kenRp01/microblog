@@ -13,18 +13,23 @@ from.forms import BlogForm
 
 class BlogListView(ListView):
     model = Blog
+    paginate_by = 5
+    context_object_name="blogs"
 
 class BlogDetailView(DetailView):
     model = Blog
+    context_object_name="blog"
 
 class BlogCreateView(CreateView):
     model = Blog
     form_class = BlogForm
     success_url = reverse_lazy("index")
+    template_name="blog/blog_create_form.html"
 
 class BlogUpdateView(UpdateView):
     model = Blog
     form_class = BlogForm
+    template_name = "blog/blog_update_form.html"
 
     def get_success_url(self):
         blog_pk = self.kwargs['pk']
