@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from blog.views import BlogListView, BlogDetailView, BlogCreateView, BlogUpdateView
+from blog.views import BlogListView, BlogDetailView, BlogCreateView, BlogUpdateView, BlogDeleteView
 
 # リクエスト-> urls.py -> views -> テンプレート -> レスポンス -> ユーザー
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('create', BlogCreateView.as_view(), name="create"),
     path('<int:pk>/update', BlogUpdateView.as_view(), name="update"),
     path('detail/<int:pk>', BlogDetailView.as_view(), name="detail"),
+    path('<int:pk>/delete', BlogDeleteView.as_view(), name="delete"),
     path('', BlogListView.as_view(), name='index'),
     path('admin/', admin.site.urls),
 ]
