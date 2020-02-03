@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView, LogoutView
 
 from blog.views import BlogListView, BlogDetailView, BlogCreateView, BlogUpdateView, BlogDeleteView
 
@@ -29,5 +30,7 @@ urlpatterns = [
     path('detail/<int:pk>', BlogDetailView.as_view(), name="detail"),
     path('<int:pk>/delete', BlogDeleteView.as_view(), name="delete"),
     path('', BlogListView.as_view(), name='index'),
+    path('login', LoginView.as_view(template_name="login.html"), name='login'),
+    path('logout', LogoutView.as_view(template_name="logout.html"), name="logout"),
     path('admin/', admin.site.urls),
 ]

@@ -124,3 +124,5 @@ STATICFILES_DIRS = (
     # mac / : windows ¥パスの区切りをOSに合わせる
     os.path.normpath(os.path.join(BASE_DIR, "assets")),
 )
+
+LOGIN_REDIRECT_URL = '/'
